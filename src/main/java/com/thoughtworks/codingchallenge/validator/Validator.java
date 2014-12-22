@@ -40,11 +40,4 @@ public class Validator
 
 		return true;
 	}
-
-	class ErrorHolder
-	{
-		int lineNo;
-		String message;
-	}
-
 }
