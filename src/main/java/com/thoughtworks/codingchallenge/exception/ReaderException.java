@@ -2,7 +2,7 @@ package com.thoughtworks.codingchallenge.exception;
 
 public class ReaderException extends Exception
 {
-	private static final long serialVersionUID = -6127571181809241017L;
+	private static final long serialVersionUID = 1L;
 
 	public ReaderException()
 	{

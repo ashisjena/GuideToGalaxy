@@ -15,16 +15,16 @@ public enum RomanLetter
 	DEMO( "", Long.MIN_VALUE, Integer.MAX_VALUE, false, false, null );
 
 	private String romanValue;
-	private long decimalValue;
+	private long arabicValue;
 	private boolean isRepeatable;
 	private boolean isSubtractable;
 	private List<RomanLetter> validHigherValues;
 	private int order;
 
-	RomanLetter( String romanValue, long decimalValue, int order, boolean isRepeatable, boolean isSubtractable, List<RomanLetter>  validHigherValues)
+	RomanLetter( String romanValue, long arabicValue, int order, boolean isRepeatable, boolean isSubtractable, List<RomanLetter>  validHigherValues)
 	{
 		this.romanValue = romanValue;
-		this.decimalValue = decimalValue;
+		this.arabicValue = arabicValue;
 		this.isRepeatable = isRepeatable;
 		this.isSubtractable = isSubtractable;
 		this.validHigherValues = validHigherValues;
@@ -64,9 +64,9 @@ public enum RomanLetter
 		return romanValue;
 	}
 
-	public long getDecimalValue()
+	public long getArabicValue()
 	{
-		return decimalValue;
+		return arabicValue;
 	}
 
 	public boolean isRepeatable()
