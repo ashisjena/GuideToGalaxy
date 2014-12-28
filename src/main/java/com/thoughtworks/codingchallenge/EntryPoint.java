@@ -1,13 +1,9 @@
 package com.thoughtworks.codingchallenge;
 
-import java.util.List;
-import java.util.Map;
-
 import com.thoughtworks.codingchallenge.converter.Converter;
-import com.thoughtworks.codingchallenge.dataobjects.InputType;
+import com.thoughtworks.codingchallenge.exception.ConverterException;
 import com.thoughtworks.codingchallenge.exception.ReaderException;
 import com.thoughtworks.codingchallenge.reader.InputReader;
-import com.thoughtworks.codingchallenge.reader.InputReader.InputAndLineNo;
 import com.thoughtworks.codingchallenge.validator.Validator;
 
 public class EntryPoint
@@ -25,17 +21,21 @@ class WorkThread implements Runnable
 	public void run()
 	{
 		Validator validator = new Validator();
+
 		Converter converter = new Converter();
-		InputReader inputReader = new InputReader( validator, converter );
-		Map<InputType, List<InputAndLineNo>> inputTypeToLine;
+		converter.setValidator( validator );
+
+		InputReader inputReader = new InputReader();
+		inputReader.setValidator( validator );
+		inputReader.setConverter( converter );
+
 		try
 		{
-			inputTypeToLine = inputReader.readInputFile();
+			inputReader.readInputFileAndPrintAnswers();
 		}
-		catch ( ReaderException e )
+		catch ( ReaderException | ConverterException e )
 		{
 			throw new RuntimeException( e );
 		}
-		
 	}
 }

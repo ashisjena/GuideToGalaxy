@@ -1,4 +1,4 @@
-package com.thoughtworks.codingchallenge;
+package com.thoughtworks.codingchallenge.common;
 
 public class StringHelper
 {
@@ -25,12 +25,6 @@ public class StringHelper
 
 	public static String getValuePart( String inputLine )
 	{
-		return inputLine.substring( inputLine.lastIndexOf( " is " ) + 4 );
-	}
-
-	public static String[] getIntergalacticUnits( String inputLine )
-	{
-		inputLine = inputLine.substring( 0, inputLine.lastIndexOf( " is " ) );
-		return inputLine.split( "//s+" );
+		return inputLine.substring( inputLine.lastIndexOf( " is " ) + 4 ).replaceAll( " (?i)Credits", "" );
 	}
 }
