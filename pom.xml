@@ -27,14 +27,14 @@
 	</dependencies>
 	<build>
 		<sourceDirectory>${src.dir}</sourceDirectory>
-		<!-- <resources>
+		<resources>
 			<resource>
 				<directory>${resources.dir}</directory>
 				<excludes>
 					<exclude>**/*.java</exclude>
 				</excludes>
 			</resource>
-		</resources> -->
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
